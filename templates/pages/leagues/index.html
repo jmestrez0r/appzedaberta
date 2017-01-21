@@ -1,0 +1,9 @@
+<h2>Competições<h2>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="league in leagues">
+    <span class="badge">{{league.numberOfTeams}}</span>
+    <p>{{league.caption}}</p>
+    <p>{{league.currentMatchday}} de {{league.numberOfMatchdays}}</p>
+  </li>
+</ul>

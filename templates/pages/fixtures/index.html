@@ -1,0 +1,9 @@
+<h2>Fixtures<h2>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="fixture in fixtures.fixtures">
+    <span class="badge">{{fixture.result.goalsHomeTeam}} - {{fixture.result.goalsAwayTeam}}</span>
+    <p>{{fixture.homeTeamName}} x {{fixture.awayTeamName}}</p>
+    <p class="small">{{fixture.odds.awayWin}} - {{fixture.odds.draw}} - {{fixture.odds.homeWin}}</p>
+  </li>
+</ul>

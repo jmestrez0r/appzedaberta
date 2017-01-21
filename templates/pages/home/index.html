@@ -1,0 +1,28 @@
+<h2>Home<h2>
+
+<div class="jumbotron">
+
+  <!-- Foto de Perfil -->
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="images/profilePic.jpeg">
+      <div class="caption">
+        <h2>José Amador</h2>
+        <p>Treinador Principal</p>
+        <p>Época 2016/2017<p/>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteudo -->
+  <div class="container">
+      <h1>Bem vindo!</h1>
+      <p>Noticias de hoje:</p>
+      <div>
+        <div infinite-scroll="loadMore()" infinite-scroll-distance="2">
+          <img ng-repeat="image in images" ng-src="http://placehold.it/225x250&text={{image}}">
+        </div>
+      </div>
+  </div>
+
+</div>
