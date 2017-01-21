@@ -23,8 +23,8 @@
             <ul class="unstyled">
                 <span class="badge badge-warning" ng-show="feeds.items.length > 0">{{(feeds.items).length}} Items</span>
                 <li ng-repeat="feed in feeds.items">
-                    <h5><a href="{{feed.link}}">{{feed.title}}</a></h5>
-                    <p class="text-left">{{feed.content}}</p>
+                    <h4><a href="{{feed.link}}">{{feed.title}}</a></h4>
+                    <p class="text-left" style="font-size:15px" >{{feed.content}}</p>
                     <span class="small">{{feed.pubDate}}</span>
                 </li>
             </ul>
