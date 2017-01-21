@@ -6,7 +6,7 @@ angular.module("Elifoot").config( ['$routeProvider', function($routeProvider) {
     })
     .when('/home', {
       templateUrl: '/templates/pages/home/index.html',
-      controller: 'NewsController'
+      controller: 'FeedsController'
     })
     .when('/leagues', {
       templateUrl: '/templates/pages/leagues/index.html',

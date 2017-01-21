@@ -6,7 +6,7 @@
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <img src="images/profilePic.jpeg">
-      <div class="caption">
+      <div class="caption" align="center">
         <h2>José Amador</h2>
         <p>Treinador Principal</p>
         <p>Época 2016/2017<p/>
@@ -19,10 +19,16 @@
       <h1>Bem vindo!</h1>
       <p>Noticias de hoje:</p>
       <div>
-        <div infinite-scroll="loadMore()" infinite-scroll-distance="2">
-          <img ng-repeat="image in images" ng-src="http://placehold.it/225x250&text={{image}}">
+        <div class="row-fluid" ng-init="loadFeed()">
+            <ul class="unstyled">
+                <span class="badge badge-warning" ng-show="feeds.length > 0">{{(feeds | filter:filterText).length}} Items</span>
+                <li ng-repeat="feed in feeds.items | filter:filterText">
+                    <h5><a href="{{feed.link}}">{{feed.title}}</a></h5>
+                    <p class="text-left">{{feed.content}}</p>
+                    <span class="small">{{feed.pubDate}}</span>
+                </li>
+            </ul>
         </div>
       </div>
   </div>
-
 </div>
