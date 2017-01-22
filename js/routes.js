@@ -27,12 +27,9 @@ angular.module("Elifoot").config( ['$routeProvider', function($routeProvider) {
       controller: 'TeamPlayersController'
     })
     .when('/classification', {
-      templateUrl: '/templates/pages/classification/index.html'
+      templateUrl: '/templates/pages/classification/index.html',
+      controller: 'ClassificationController'
     })
-    .when('/classification', {
-      templateUrl: '/templates/pages/classification/index.html'
-    })
-
     .otherwise({
       redirectTo: '/home'
     });

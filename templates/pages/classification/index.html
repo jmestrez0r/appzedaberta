@@ -1,1 +1,26 @@
-<h3>Classificação</h3>
+<h3>Classificação - {{classification.leagueCaption}}</h3>
+
+<table st-table="rowCollection" class="table table-striped">
+	<thead>
+	<tr>
+		<th>Posição</th>
+		<th></th>
+		<th>Equipa</th>
+		<th>Pontos</th>
+		<th>Vitórias</th>
+		<th>Derrotas</th>
+		<th>Empates</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in classification.standing">
+		<td>{{row.position}}</td>
+		<td><img src="{{row.crestURI}}" width="32" height="32"</img></td>
+		<td>{{row.teamName}}</td>
+		<td>{{row.points}}</td>
+		<td>{{row.wins}}</td>
+		<td>{{row.losses}}</td>
+		<td>{{row.draws}}</td>
+	</tr>
+	</tbody>
+</table>
