@@ -13,7 +13,8 @@ angular.module("Elifoot").config( ['$routeProvider', function($routeProvider) {
       controller: 'LeaguesIndexController'
     })
     .when('/calendar', {
-      templateUrl: '/templates/pages/calendar/index.html'
+      templateUrl: '/templates/pages/calendar/index.html',
+      controller: 'CalendarController'
     })
     .when('/fixtures', {
       templateUrl: '/templates/pages/fixtures/index.html',

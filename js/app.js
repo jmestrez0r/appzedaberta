@@ -1,1 +1,1 @@
-angular.module("Elifoot", ['ngRoute']);
+angular.module("Elifoot", ['ngRoute', 'ui.calendar']);
