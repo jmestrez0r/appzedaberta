@@ -1,0 +1,26 @@
+<h2>Treinos<h2>
+
+<h3><small>Lista de treinos<small></h3>
+
+<div ng-if="practices.length != 0">
+  <div class="dropdown" ng-repeat="practice in practices">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        {{practice.identification}} - <small>{{practice.description}}</small>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#/practices" ng-click="visualizePractice(practice.identification)">Visualizar</a></li>
+        <li><a href="#/practices" ng-click="editPractice(practice.identification)">Editar</a></li>
+        <li><a href="#/practices" ng-click="duplicatePractice(practice.identification)">Duplicar</a></li>
+        <li><a href="#/practices" ng-click="removePractice(practice.identification)">Remover</a></li>
+      </ul>
+    </div>
+  </div>
+<div ng-if="practices.length == 0">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+              disabled="true" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Sem treinos a listar.
+          <span class="caret"></span>
+  </button>
+</div>

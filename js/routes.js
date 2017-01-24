@@ -20,6 +20,10 @@ angular.module("Elifoot").config( ['$routeProvider', function($routeProvider) {
       templateUrl: '/templates/pages/fixtures/index.html',
       controller: 'FixturesController'
     })
+    .when('/practices', {
+      templateUrl: '/templates/pages/practices/index.html',
+      controller: 'PracticesController'
+    })
     .when('/about', {
       templateUrl: '/templates/pages/about/index.html'
     })
