@@ -15,12 +15,36 @@
         <li><a href="#/practices" ng-click="duplicatePractice(practice.identification)">Duplicar</a></li>
         <li><a href="#/practices" ng-click="removePractice(practice.identification)">Remover</a></li>
       </ul>
-    </div>
   </div>
+</div>
 <div ng-if="practices.length == 0">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
               disabled="true" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Sem treinos a listar.
           <span class="caret"></span>
   </button>
+</div>
+<p/>
+
+<div ng-show="players">
+  <!-- pick icons -->
+  <div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+      ng-model="icons" jqyoui-draggable="{animate:true}" ng-hide="!icons.component">
+      {{icons.component}}
+  </div>
+
+  <!-- pick players -->
+  <div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+      ng-model="players" jqyoui-draggable="{animate:true}" ng-hide="!players.name">
+      {{players.name}}
+  </div>
+
+  <!-- drop -->
+  <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="allList"
+        jqyoui-droppable style='height:50px;'>
+    <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="allList"
+        jqyoui-draggable ng-hide="!allList.title">
+      {{allList.title}}
+    </div>
+  </div>
 </div>
