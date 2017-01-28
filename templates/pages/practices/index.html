@@ -26,25 +26,48 @@
 </div>
 <p/>
 
-<div ng-show="players">
-  <!-- pick icons -->
-  <div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-      ng-model="icons" jqyoui-draggable="{animate:true}" ng-hide="!icons.component">
-      {{icons.component}}
-  </div>
+<div class='contentWrapper ng-cloak'>
+  <div class='content'>
+    <div class="row-fluid">
 
-  <!-- pick players -->
-  <div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-      ng-model="players" jqyoui-draggable="{animate:true}" ng-hide="!players.name">
-      {{players.name}}
-  </div>
+      <h3><small>Icones<small></h3>
+      <!-- icons area -->
+      <div class="thumbnail" data-drop="true" ng-model='icons' jqyoui-droppable="{multiple:true}">
+        <div class="caption">
+          <div class="btn btn-info btn-draggable" ng-repeat="icon in icons"
+                ng-show="icon.component" data-drag="true"
+                data-jqyoui-options="{revert: 'invalid'}" ng-model="icons"
+                jqyoui-draggable="{index: {{$index}},animate:true}">
+                {{icon.component}}
+          </div>
+        </div>
+      </div>
 
-  <!-- drop -->
-  <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="allList"
-        jqyoui-droppable style='height:50px;'>
-    <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="allList"
-        jqyoui-draggable ng-hide="!allList.title">
-      {{allList.title}}
+      <h3><small>Jogadores<small></h3>
+      <!-- players area -->
+      <div class="thumbnail" data-drop="true" ng-model='players' jqyoui-droppable="{multiple:true}">
+        <div class="caption">
+          <div class="btn btn-info btn-draggable" ng-repeat="player in players"
+                ng-show="player.name" data-drag="true"
+                data-jqyoui-options="{revert: 'invalid'}" ng-model="players"
+                jqyoui-draggable="{index: {{$index}},animate:true}">
+                {{player.name}}
+          </div>
+        </div>
+      </div>
+
+      <h3><small>Quadro Tactico<small></h3>
+      <!-- drop area -->
+      <div class="thumbnail" data-drop="true" ng-model='allList' jqyoui-droppable="{multiple:true}">
+        <div class="caption">
+          <div class="btn btn-info btn-draggable" ng-repeat="all in allList"
+                ng-show="all" data-drag="true"
+                data-jqyoui-options="{revert: 'invalid'}" ng-model="all"
+                jqyoui-draggable="{index: {{$index}},animate:true}">
+                {{all}}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
