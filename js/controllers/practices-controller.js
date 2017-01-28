@@ -29,6 +29,22 @@ angular.module("Elifoot").controller('PracticesController',
       console.log('remove practice' + practices);
     }
 
+    //tablesize
+    $scope.columns = [
+      {'column': 1},
+      {'column': 2},
+      {'column': 3},
+      {'column': 4}
+    ];
+    $scope.rows = [
+      {'row': 1},
+      {'row': 2},
+      {'row': 3},
+      {'row': 4},
+      {'row': 5},
+      {'row': 6}
+    ];
+
     //component area
     $scope.icons = [
       { 'component': 'Item 1', 'drag': true },
