@@ -2,42 +2,63 @@
 
 <h3><small>Lista de treinos<small></h3>
 
-<div ng-if="practices.length != 0">
-  <div class="dropdown" ng-repeat="practice in practices">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        {{practice.identification}} - <small>{{practice.description}}</small>
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#/practices" ng-click="visualizePractice(practice.identification)">Visualizar</a></li>
-        <li><a href="#/practices" ng-click="editPractice(practice.identification)">Editar</a></li>
-        <li><a href="#/practices" ng-click="duplicatePractice(practice.identification)">Duplicar</a></li>
-        <li><a href="#/practices" ng-click="removePractice(practice.identification)">Remover</a></li>
-      </ul>
-  </div>
-</div>
-<div ng-if="practices.length == 0">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-              disabled="true" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Sem treinos a listar.
+<div class="col-sm-2" style="float: left" width="40%">
+  <div ng-if="practices.length != 0">
+    <div class="dropdown" ng-repeat="practice in practices">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          {{practice.identification}} - <small>{{practice.description}}</small>
           <span class="caret"></span>
-  </button>
-</div>
-<p/>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#/practices" ng-click="visualizePractice(practice.identification)">Visualizar</a></li>
+          <li><a href="#/practices" ng-click="editPractice(practice.identification)">Editar</a></li>
+          <li><a href="#/practices" ng-click="duplicatePractice(practice.identification)">Duplicar</a></li>
+          <li><a href="#/practices" ng-click="removePractice(practice.identification)">Remover</a></li>
+        </ul>
+    </div>
+  </div>
+  <div ng-if="practices.length == 0">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                disabled="true" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Sem treinos a listar.
+            <span class="caret"></span>
+    </button>
+  </div>
+  <p/>
 
-<div class='contentWrapper ng-cloak'>
-  <div class='content'>
-    <div class="row-fluid">
-      <h3><small>Icones<small></h3>
-      <!-- icons area -->
-      <div class="thumbnail" data-drop="true" ng-model='icons' jqyoui-droppable="{multiple:true}">
-        <div class="caption">
-          <div class="btn btn-info btn-draggable" ng-repeat="icon in icons"
-                ng-show="icon.component" data-drag="true"
-                data-jqyoui-options="{revert: 'invalid'}" ng-model="icons"
-                jqyoui-draggable="{index: {{$index}},animate:true}">
-                {{icon.component}}
+  <div class='contentWrapper ng-cloak'>
+    <div class='content'>
+      <div class="row-fluid">
+        <h3><small>Icones<small></h3>
+        <!-- icons area -->
+        <div class="thumbnail" data-drop="true" ng-model='icons' jqyoui-droppable="{multiple:true}">
+          <div class="caption">
+            <div class="btn btn-info btn-draggable" ng-repeat="icon in icons"
+                  ng-show="icon.component" data-drag="true"
+                  data-jqyoui-options="{revert: 'invalid'}" ng-model="icons"
+                  jqyoui-draggable="{index: {{$index}},animate:true}">
+                  {{icon.component}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='contentWrapper ng-cloak'>
+    <div class='content'>
+      <div class="row-fluid">
+        <h3><small>Jogadores<small></h3>
+        <!-- players area -->
+        <div class="thumbnail" data-drop="true" ng-model='players' jqyoui-droppable="{multiple:true}">
+          <div class="caption">
+            <div class="btn btn-info btn-draggable" ng-repeat="player in players"
+                  ng-show="player.name" data-drag="true"
+                  data-jqyoui-options="{revert: 'invalid'}" ng-model="players"
+                  jqyoui-draggable="{index: {{$index}},animate:true}">
+                  {{player.name}}
+            </div>
           </div>
         </div>
       </div>
@@ -45,34 +66,18 @@
   </div>
 </div>
 
-<div class='contentWrapper ng-cloak'>
-  <div class='content'>
-    <div class="row-fluid">
-      <h3><small>Jogadores<small></h3>
-      <!-- players area -->
-      <div class="thumbnail" data-drop="true" ng-model='players' jqyoui-droppable="{multiple:true}">
-        <div class="caption">
-          <div class="btn btn-info btn-draggable" ng-repeat="player in players"
-                ng-show="player.name" data-drag="true"
-                data-jqyoui-options="{revert: 'invalid'}" ng-model="players"
-                jqyoui-draggable="{index: {{$index}},animate:true}">
-                {{player.name}}
-          </div>
-        </div>
+<div style="float: right" width="25%">
+  <h3><small>Quadro Tactico<small></h3>
+  <!-- drop area -->
+  <div class="caption">
+    <div class="col-md-3"  data-drop="true" jqyoui-droppable="{multiple:true}">
+        <div data-drag="true">
+          <img src="../../../images/board.jpeg" jqyoui-draggable="{index: {{$index}},animate:true}"/>
       </div>
     </div>
   </div>
 </div>
 
-<h3><small>Quadro Tactico<small></h3>
-<!-- drop area -->
-  <div class="col-md-3"  data-drop="true" jqyoui-droppable="{multiple:true}">
-      <div data-drag="true"
-        jqyoui-draggable="{index: {{$index}},animate:true}">
-        <img src="../../../images/board.jpeg"/>
-    </div>
-  </div>
-</div>
 
 
 
